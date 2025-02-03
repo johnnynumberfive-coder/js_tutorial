@@ -34,7 +34,11 @@ function Phrase(content) {
         return this.letters().toLowerCase();
     }
     this.palindrome = function palindrome() {
-        return this.processedContent() === this.processedContent().reverse();
+        if (this.letters()) {
+          return this.processedContent() === this.processedContent().reverse();
+        } else {
+          return false
+        }
       }
       this.letters = function letters() {
         return (this.content.match(/[a-z]/gi) || []).join("");
